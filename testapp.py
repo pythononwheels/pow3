@@ -2,11 +2,11 @@
 # pow test app
 #
 
-from models import test
+from models.user import User
 
+print("hello testapp")
+u=User()
 
-print(dir(test.Test))
-print(test.Test.__table__)
-print(test.Test.metadata)
-t = test.Test()
-print(t.__table__)
+print(30*"-")
+
+print(dir(u))
