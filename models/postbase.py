@@ -13,7 +13,8 @@ class PostBase(Base,BaseModel):
     title = Column(String)
     text = Column(String)
     session = Session()
-
+    engine = engine
+    
     def __repr__(self):
        return "<User(title='%s', text='%s')>" % (
                              self.title, self.text)

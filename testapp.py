@@ -4,9 +4,7 @@
 
 from models.user import User
 
-print("hello testapp")
 u=User()
+u.metadata.create_all(u.engine)
+u.schema()
 
-print(30*"-")
-
-print(dir(u))

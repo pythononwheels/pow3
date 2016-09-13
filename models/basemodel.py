@@ -6,6 +6,14 @@ from db import engine, get_session
 
 class BaseModel():
     
+    def schema(self):
+        print(50*"-")
+        print("Schema for: " + str(self.__class__))
+        print("{0:30s} {1:20s}".format("Column", "Type"))
+        print(50*"-")
+        for col in self.__table__._columns:
+            print("{0:30s} {1:20s}".format(str(col), str(col.type)))
+            #print(dir(col))
 
     def create_table(self):
         """

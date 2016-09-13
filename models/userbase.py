@@ -14,6 +14,7 @@ class UserBase(Base,BaseModel):
     fullname = Column(String)
     password = Column(String(30))
     session = Session()
+    engine = engine
 
     def __repr__(self):
        return "<User(name='%s', fullname='%s', password='%s')>" % (

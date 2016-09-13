@@ -71,6 +71,8 @@ def rel_dec(what, who):
 # ala flask app.route()
 # see: http://ains.co/blog/things-which-arent-magic-flask-part-1.html
 # 
+# For the relation part see: 
+# http://docs.sqlalchemy.org/en/latest/orm/tutorial.html#building-a-relationship
 from sqlalchemy.orm import relationship
 from sqlalchemy import ForeignKey
 from sqlalchemy import Column, Integer, String
@@ -89,7 +91,7 @@ class powDec():
             cls_name = str(cls).split("'")[1].split(".")[2].lower()
             setattr(rel, cls_name, relationship(cls_name.capitalize(), back_populates=pluralize(rel_name)) )
             setattr(rel, cls_name + "_id", Column(Integer, ForeignKey(cls_name+".id")))
-            print(dir(rel))
+            ##print(dir(rel))
             print("I see a: " + str(cls_name) + " has many: " + pluralize(rel_name))
             setattr(cls, pluralize(rel_name), 
                 relationship(singularize(rel_name).capitalize(), order_by=rel.id,
