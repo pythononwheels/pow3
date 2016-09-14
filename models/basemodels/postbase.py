@@ -1,10 +1,10 @@
 #
 # Model
 #
-from config.config import Base
+from pow3.config.config import Base
 from sqlalchemy import Column, Integer, String, Sequence
 from db import engine, Session
-from models.basemodel import BaseModel
+from pow3.models.basemodels.basemodel import BaseModel
 
 class PostBase(Base,BaseModel):
     __tablename__ = "posts"

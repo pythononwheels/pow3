@@ -1,8 +1,6 @@
 
 from sqlalchemy import Column, Integer, String
-from db import engine, get_session
-
-
+from pow3.db import engine, get_session
 
 class BaseModel():
     
