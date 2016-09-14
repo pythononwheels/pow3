@@ -90,7 +90,7 @@ class powDec():
             rel_name = str(rel).split("'")[1].split(".")[2].lower()
             cls_name = str(cls).split("'")[1].split(".")[2].lower()
             setattr(rel, cls_name, relationship(cls_name.capitalize(), back_populates=pluralize(rel_name)) )
-            setattr(rel, cls_name + "_id", Column(Integer, ForeignKey(cls_name+".id")))
+            setattr(rel, cls_name + "_id", Column(Integer, ForeignKey(pluralize(cls_name)+".id")))
             ##print(dir(rel))
             print("I see a: " + str(cls_name) + " has many: " + pluralize(rel_name))
             setattr(cls, pluralize(rel_name), 

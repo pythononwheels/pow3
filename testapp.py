@@ -3,8 +3,11 @@
 #
 
 from models.user import User
+from models.Post import Post
+from db import session, engine
 
-u=User()
-u.metadata.create_all(u.engine)
-u.schema()
+
+u=User(name="klaas")
+u.metadata.create_all(engine)
+
 

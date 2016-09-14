@@ -15,6 +15,15 @@ class BaseModel():
             print("{0:30s} {1:20s}".format(str(col), str(col.type)))
             #print(dir(col))
 
+    def values(self):
+        print(50*"-")
+        print("Schema for: " + str(self.__class__))
+        print("{0:30s} {1:20s}".format("Column", "Type"))
+        print(50*"-")
+        for col in self.__table__._columns:
+            pass
+            
+            
     def create_table(self):
         """
             created the physical table in the DB

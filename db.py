@@ -10,5 +10,12 @@ print("trying to connect to: " + conn_str)
 engine = create_engine(conn_str)
 Session = sessionmaker(bind=engine)
 
+
 def get_session():
     return Session()
+
+def get_engine():
+    return engine
+
+
+session = get_session()
