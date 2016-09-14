@@ -19,7 +19,9 @@ from pow3.config.config import Base
 from pow3.models import *
 
 from sqlalchemy import engine_from_config, pool, MetaData
- 
+
+# alembic support multiple model files 
+# see: http://liuhongjiang.github.io/hexotech/2015/10/14/alembic-support-multiple-model-files/
 def combine_metadata(*args):
     m = MetaData()
     for metadata in args:

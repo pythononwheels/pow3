@@ -4,6 +4,9 @@ from pow3.db import engine, get_session
 
 class BaseModel():
     
+    def get_session(self):
+        return self.session
+        
     def schema(self):
         print(50*"-")
         print("Schema for: " + str(self.__class__))

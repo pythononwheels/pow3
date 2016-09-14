@@ -2,12 +2,14 @@
 # pow test app
 #
 
-from models.user import User
-from models.Post import Post
-from db import session, engine
+from pow3.models.user import User
+from pow3.models.Post import Post
+from pow3.db import session, engine
 
 
 u=User(name="klaas")
-u.metadata.create_all(engine)
+#u.metadata.create_all(engine)
 
+import os
+os.listdir("./models")
 

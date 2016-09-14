@@ -1,8 +1,14 @@
-import os
-import glob
-dname = os.path.basename(os.path.normpath(os.path.dirname(__file__)))
-modules = glob.glob(os.path.dirname(__file__)+"/*.py")
-mods = [os.path.basename(f)[:-3] for f in modules if not os.path.basename(f).startswith('_')]
-for name in mods:
-    print("from " + dname +"." + name +" import *")
-    exec("from " + dname +"." + name +" import *")
+# __all__ = []
+
+# import pkgutil
+# import inspect
+
+# for loader, name, is_pkg in pkgutil.walk_packages(__path__):
+#     module = loader.find_module(name).load_module(name)
+
+#     for name, value in inspect.getmembers(module):
+#         if name.startswith('__'):
+#             continue
+
+#         globals()[name] = value
+#         __all__.append(name)
