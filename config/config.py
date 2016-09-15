@@ -2,8 +2,6 @@
 #
 # pow settings file
 # 
-from sqlalchemy.ext.declarative import declarative_base
-
 server = {
     "app_name"          :   "powtest",
     "port"              :   8080,
@@ -34,5 +32,4 @@ db = {
 }
 
 
-Base = declarative_base()
 

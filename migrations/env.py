@@ -16,7 +16,9 @@ fileConfig(config.config_file_name)
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 from pow3.config.config import Base
-from pow3.models import *
+#from pow3.models import *
+# import all models to hand them over to combine_metadata.
+
 
 from sqlalchemy import engine_from_config, pool, MetaData
 

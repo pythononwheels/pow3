@@ -1,12 +1,24 @@
 
 from sqlalchemy import Column, Integer, String
-from pow3.db import engine, get_session
+from sqlalchemy.ext.declarative import declared_attr
+from pow3.db import engine
+from pow3.powlib import pluralize
 
 class BaseModel():
     
+    __table_args__ = { "extend_existing": True }
+
+    id =  Column(Integer, primary_key=True)
+
+
+    @declared_attr
+    def __tablename__(cls):
+        return pluralize(cls.__name__.lower())
+
+
     def get_session(self):
         return self.session
-        
+
     def schema(self):
         print(50*"-")
         print("Schema for: " + str(self.__class__))
